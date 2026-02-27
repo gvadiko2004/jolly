@@ -36,6 +36,10 @@
   letter-spacing: 0.3em;
   color: #fff;
   text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .header__list {
@@ -188,6 +192,10 @@
 
 /* ================= RESPONSIVE ================= */
 
+.content-b {
+  display: none;
+}
+
 @media (max-width: 1080px) {
   .header__list,
   .header__btn {
@@ -196,5 +204,23 @@
 
   .header__burger {
     display: block;
+  }
+
+  .content-b {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    svg {
+      min-width: 26px;
+      max-width: 26px;
+    }
+
+    a {
+      img {
+        min-width: 26px;
+        max-width: 26px;
+      }
+    }
   }
 }
