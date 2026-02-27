@@ -1,0 +1,87 @@
+/* На всякий — чтобы не было "прыжков" */
+.js-reveal,
+.reveal-stagger > * {
+  will-change: opacity, transform, filter;
+}
+
+/* БАЗА: элемент скрыт до появления */
+.js-reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  filter: blur(8px);
+ 
+}
+
+/* Когда попал в зону видимости */
+.js-reveal.is-inview {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+/* Варианты направлений */
+.reveal-up {
+  transform: translate3d(0, 34px, 0);
+}
+.reveal-left {
+  transform: translate3d(-34px, 0, 0);
+}
+.reveal-right {
+  transform: translate3d(34px, 0, 0);
+}
+.reveal-scale {
+  transform: translate3d(0, 12px, 0) scale(0.96);
+  filter: blur(10px);
+}
+.reveal-fade {
+  transform: none;
+  filter: none;
+}
+
+/* ===============================
+   STAGGER: контейнер оживляет детей
+   Пример: .private__list.reveal-stagger
+================================= */
+
+.reveal-stagger {
+  /* сам контейнер тоже может плавно появляться */
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  filter: blur(8px);
+ 
+}
+
+/* Когда контейнер в зоне видимости — дети раскрываются */
+.reveal-stagger.is-inview > * {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  filter: blur(0);
+}
+
+/* ===============================
+   (Опционально) немного "дороже" на карточках
+================================= */
+
+.private__list-block,
+.video__content-block {
+  transform: translateZ(0);
+}
+
+.private__list-block:hover {
+  transform: translate3d(0, -6px, 0);
+}
+
+/* ===============================
+   Reduced motion (важно)
+================================= */
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal,
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

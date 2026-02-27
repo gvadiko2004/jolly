@@ -1,0 +1,152 @@
+.private {
+  text-align: center;
+
+  padding: 70px 0 0 0;
+  // .private__inner
+
+  &__inner {
+  overflow: hidden;
+
+  }
+
+  // .private__list
+
+  &__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+
+    margin-top: 60px;
+  }
+
+  // .private__list-block
+
+  &__list-block {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+  }
+
+  // .private__list-img
+
+  &__list-img {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: blur(14px);
+    }
+  }
+}
+
+.privete {
+  // .privete__list-unlock
+
+  &__list-unlock {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 9999px;
+    width: 56px;
+    height: 56px;
+
+    backdrop-filter: blur(4px);
+    background: rgba(255, 255, 255, 0.1);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.private__list-block:hover {
+  img {
+    transform: scale(1.08);
+  }
+
+  .privete__list-unlock {
+    background: #fff;
+
+    svg {
+        path {
+            stroke: #000;
+        }
+    }
+  }
+}
+
+// 
+
+
+.private__list {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+
+  /* убираем скроллбар */
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.private__list-block {
+  flex: 0 0 300px; // ширина карточки по умолчанию
+  scroll-snap-align: start;
+  position: relative;
+}
+
+/* Картинка */
+.private__list-img {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 16px;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(8px);
+  }
+}
+
+@media (max-width: 440px) {
+  .private__list {
+    gap: 16px;
+    padding-left: 16px;
+  }
+
+  .private__list-block {
+    flex: 0 0 85%; // вот тут магия
+  }
+}
+
+.view-text {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 32px;
+
+  font-size: 12px;
+  text-decoration: underline;
+
+  z-index: 111;
+  color: #fff;
+}
+
+

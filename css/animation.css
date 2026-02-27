@@ -1,0 +1,280 @@
+/* ===============================
+   REVEAL BASE
+================================= */
+.reveal {
+  opacity: 0;
+  -webkit-transform: translateY(60px);
+          transform: translateY(60px);
+  -webkit-transition: opacity var(--duration-medium) var(--ease-out), -webkit-transform var(--duration-medium) var(--ease-out);
+  transition: opacity var(--duration-medium) var(--ease-out), -webkit-transform var(--duration-medium) var(--ease-out);
+  transition: opacity var(--duration-medium) var(--ease-out), transform var(--duration-medium) var(--ease-out);
+  transition: opacity var(--duration-medium) var(--ease-out), transform var(--duration-medium) var(--ease-out), -webkit-transform var(--duration-medium) var(--ease-out);
+}
+
+.reveal.active {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+/* Fade */
+.reveal-fade {
+  opacity: 0;
+  -webkit-transition: opacity 1s var(--ease-out);
+  transition: opacity 1s var(--ease-out);
+}
+
+.reveal-fade.active {
+  opacity: 1;
+}
+
+/* Slide Left */
+.reveal-left {
+  opacity: 0;
+  -webkit-transform: translateX(-80px);
+          transform: translateX(-80px);
+  -webkit-transition: all 1s var(--ease-out);
+  transition: all 1s var(--ease-out);
+}
+
+.reveal-left.active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+/* Slide Right */
+.reveal-right {
+  opacity: 0;
+  -webkit-transform: translateX(80px);
+          transform: translateX(80px);
+  -webkit-transition: all 1s var(--ease-out);
+  transition: all 1s var(--ease-out);
+}
+
+.reveal-right.active {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+/* Scale */
+.reveal-scale {
+  opacity: 0;
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+  -webkit-transition: all 0.8s var(--ease-smooth);
+  transition: all 0.8s var(--ease-smooth);
+}
+
+.reveal-scale.active {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+
+/* ===============================
+   STAGGER EFFECT
+================================= */
+.stagger > * {
+  opacity: 0;
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
+  -webkit-transition: all 0.8s var(--ease-out);
+  transition: all 0.8s var(--ease-out);
+}
+
+.stagger.active > * {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.stagger.active > *:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+
+.stagger.active > *:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+.stagger.active > *:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+
+.stagger.active > *:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+
+.stagger.active > *:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+/* ===============================
+   HERO PARALLAX
+================================= */
+.hero {
+  overflow: hidden;
+}
+.hero__content {
+  -webkit-transition: -webkit-transform 0.2s ease-out;
+  transition: -webkit-transform 0.2s ease-out;
+  transition: transform 0.2s ease-out;
+  transition: transform 0.2s ease-out, -webkit-transform 0.2s ease-out;
+}
+
+/* ===============================
+   PRIVATE GRID HOVER
+================================= */
+.private__list-block {
+  overflow: hidden;
+  -webkit-transition: -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+  transition: -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, -webkit-transform 0.4s ease, -webkit-box-shadow 0.4s ease;
+}
+.private__list-block img {
+  -webkit-transition: -webkit-transform 0.6s ease;
+  transition: -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease;
+  transition: transform 0.6s ease, -webkit-transform 0.6s ease;
+}
+.private__list-block:hover {
+  -webkit-transform: translateY(-8px);
+          transform: translateY(-8px);
+  -webkit-box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+          box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+.private__list-block:hover img {
+  -webkit-transform: scale(1.08);
+          transform: scale(1.08);
+}
+
+/* ===============================
+   VIDEO CARDS
+================================= */
+.video__content-block {
+  -webkit-transition: background 0.4s ease, -webkit-transform 0.4s ease;
+  transition: background 0.4s ease, -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease, background 0.4s ease;
+  transition: transform 0.4s ease, background 0.4s ease, -webkit-transform 0.4s ease;
+}
+.video__content-block:hover {
+  -webkit-transform: translateY(-10px);
+          transform: translateY(-10px);
+}
+
+/* ===============================
+   FAQ ANIMATION
+================================= */
+.faq__list-item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.faq__list-item .bottom {
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.6s var(--ease-smooth), opacity 0.4s ease;
+  transition: max-height 0.6s var(--ease-smooth), opacity 0.4s ease;
+  opacity: 0;
+}
+.faq__list-item.active .bottom {
+  max-height: 300px;
+  opacity: 1;
+}
+.faq__list-item .icon {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+}
+.faq__list-item.active .icon {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+/* ===============================
+   MOBILE MENU
+================================= */
+.mobile-menu {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-transition: -webkit-transform 0.6s var(--ease-smooth);
+  transition: -webkit-transform 0.6s var(--ease-smooth);
+  transition: transform 0.6s var(--ease-smooth);
+  transition: transform 0.6s var(--ease-smooth), -webkit-transform 0.6s var(--ease-smooth);
+  z-index: 999;
+}
+.mobile-menu.active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.mobile-menu__nav a {
+  opacity: 0;
+  -webkit-transform: translateX(40px);
+          transform: translateX(40px);
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+.mobile-menu.active .mobile-menu__nav a {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+.mobile-menu.active .mobile-menu__nav a:nth-child(1) {
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
+}
+.mobile-menu.active .mobile-menu__nav a:nth-child(2) {
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+.mobile-menu.active .mobile-menu__nav a:nth-child(3) {
+  -webkit-transition-delay: 0.3s;
+          transition-delay: 0.3s;
+}
+.mobile-menu.active .mobile-menu__nav a:nth-child(4) {
+  -webkit-transition-delay: 0.4s;
+          transition-delay: 0.4s;
+}
+.mobile-menu.active .mobile-menu__nav a:nth-child(5) {
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+}
+
+/* ===============================
+   BUTTON ANIMATION
+================================= */
+.btn-static {
+  position: relative;
+  overflow: hidden;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.btn-static:hover {
+  -webkit-transform: translateY(-3px);
+          transform: translateY(-3px);
+}
+.btn-static::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-transition: -webkit-transform 0.8s ease;
+  transition: -webkit-transform 0.8s ease;
+  transition: transform 0.8s ease;
+  transition: transform 0.8s ease, -webkit-transform 0.8s ease;
+}
+.btn-static:hover::after {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
